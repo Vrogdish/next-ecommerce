@@ -1,0 +1,54 @@
+.burger-nav {
+    padding: 10px 0;
+    width: 30px;
+    cursor: pointer;
+    
+    
+}
+
+.burger-close .burger-bar {
+    width: 0;
+}
+
+.burger-close .burger-bar::after {
+    transform-origin: left;
+    transform: rotate(45deg);
+}
+
+.burger-close .burger-bar::before {
+    transform-origin: left;
+    transform: rotate(-45deg);
+}
+
+
+.burger-bar {
+    position: relative;
+    height: 2px;
+    background-color: black;
+    transition: all 0.4s ease-in-out;
+    width: 30px;
+}
+
+.burger-bar::before {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    content: "";
+    top: 11px;
+    background-color: black;
+    transition: all 0.4s ease-in-out;
+
+}
+
+.burger-bar::after {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    content: "";
+    top: -11px;
+    background-color: black;
+    transition: all 0.4s ease-in-out;
+
+}
+
+
