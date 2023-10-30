@@ -1,6 +1,9 @@
+"use client";
+
 import Typography from "@/design/typography/Typography";
 import React from "react";
 import Image from "next/image";
+import { useInView } from "react-intersection-observer";
 
 const collection = [
   {
@@ -24,18 +27,28 @@ const collection = [
 ];
 
 export default function Collection() {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+  });
+
   return (
-    <div className="my-20">
+    <div
+      ref={ref}
+      className={`my-20 transition-all duration-700 ${
+        inView ? "opacity-100" : "opacity-0"
+      }`}
+    >
       <Typography variant="h2" className="text-center pt-20 pb-4">
         Nouvelles collections
       </Typography>
       <Image
-        src={"/SVG/separate.svg"}
+        src={"/svg/separate.svg"}
         alt=""
         width={300}
         height={4}
         className="m-auto"
       />
+
       <div className="grid grid-cols-3 gap-8 max-w-4xl mx-auto my-10 ">
         {collection.map((item, index) => (
           <div key={index}>
@@ -48,7 +61,9 @@ export default function Collection() {
               />
             </div>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. </p>
-            <p className="font-bold text-right">125.00 €</p>
+            <Typography variant="caption" component="p" className="text-right text-red-800 mt-3">
+              125.00 €
+            </Typography>
           </div>
         ))}
       </div>

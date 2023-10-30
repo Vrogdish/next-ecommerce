@@ -1,14 +1,17 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import { Navlink } from "@/models/navlink";
 
 interface Props {
-  navList: { title: string; imageUrl?: string; link: string }[];
+  closeMenu? : ()=>void
+  navList: Navlink[];
   className?: string;
   direction?: "row" | "col";
 }
 
 export default function Navbar({
+  closeMenu,
   navList,
   className,
   direction = "row",
@@ -28,7 +31,7 @@ export default function Navbar({
   return (
     <nav className={`flex ${directionStyle} ${className}`}>
       {navList.map((item, index) => (
-        <Link key={index} href={item.link}>
+        <Link key={index} href={item.link} onClick={closeMenu}>
           {item.imageUrl ? (
             <Image
               src={item.imageUrl}

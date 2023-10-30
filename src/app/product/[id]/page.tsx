@@ -4,10 +4,13 @@ import { useProductStore } from "@/store/products";
 import React, { useEffect } from "react";
 import Image from "next/image";
 import BuyIt from "@/components/buy-it/BuyIt";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function Product({ params }: { params: { id: number } }) {
   const getAllProducts = useProductStore((state) => state.getAllProducts);
+
+  const router = useRouter()
+  
 
   const productsList = useProductStore((state) => state.products);
   const product = productsList.find((item) => item.id === +params.id);
@@ -18,11 +21,11 @@ export default function Product({ params }: { params: { id: number } }) {
 
     if (product) {
     return (
-      <div>
-        <Link href={"/"} className="mt-20 flex gap-4 items-center px-10">
+      <main>
+        <div onClick={router.back} className="mt-20 flex gap-4 items-center px-10 cursor-pointer">
           <Image src={"/icons/arrow.png"} alt="" width={30} height={30} className="rotate-180"/>
           <p >Retour à la boutique</p>
-        </Link>
+        </div>
         <div className=" mx-auto max-w-screen-lg">
           <div className="flex gap-28 items-end  mb-20 ">
             <div>
@@ -39,7 +42,7 @@ export default function Product({ params }: { params: { id: number } }) {
             </div>
           </div>{" "}
           <Image
-            src={"/SVG/separate.svg"}
+            src={"/svg/separate.svg"}
             alt=""
             width={300}
             height={4}
@@ -47,7 +50,7 @@ export default function Product({ params }: { params: { id: number } }) {
           />
         </div>
         
-      </div>
+      </main>
     );
   }
 }

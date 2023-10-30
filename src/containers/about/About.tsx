@@ -1,19 +1,26 @@
+"use client"
+
 import React from "react";
 import Image from "next/image";
 import Typography from "@/design/typography/Typography";
+import { useInView } from "react-intersection-observer";
 
 export default function About() {
+  const { ref, inView} = useInView({
+    threshold: 0.2,
+  });
+
   return (
-    <div className="mb-20">
+    <div ref={ref} className={`transition-all duration-700 mb-20 ${inView ? "opacity-100" : "opacity-0"}`}>
       <Typography
         variant="h2"
         component="h2"
-        className="text-center mt-40 mb-10"
+        className="text-center pt-40 mb-10"
       >
         Nous suivre
       </Typography>
       <Image
-        src={"/SVG/instagram.svg"}
+        src={"/svg/instagram.svg"}
         alt="instagram"
         width={50}
         height={50}

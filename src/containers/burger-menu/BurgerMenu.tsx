@@ -8,28 +8,23 @@ import { Navlink } from "@/models/navlink";
 const burgerNavList: Navlink[] = [
   {
     title: "Collection femme",
-    imageUrl: "",
-    link: "",
+    link: `/shop/${encodeURIComponent("women")}`,
   },
   {
     title: "Collection Homme",
-    imageUrl: "",
-    link: "",
+    link: `/shop/${encodeURIComponent("men")}`,
   },
   {
     title: "Accessoires",
-    imageUrl: "",
-    link: "",
+    link: `/shop/${encodeURIComponent("accesories")}`,
   },
   {
     title: "Mon compte",
-    imageUrl: "",
-    link: "",
+    link: "/account",
   },
   {
     title: "Mon panier",
-    imageUrl: "",
-    link: "",
+    link: "/cart",
   },
 ];
 
@@ -51,6 +46,7 @@ export default function BurgerMenu() {
       <div className="absolute top-16 left-0  h-14 w-full overflow-hidden">
         <Navbar
           navList={burgerNavList}
+          // closeMenu={()=>toggleMenu()}
           className={`bg-slate-300 bg-opacity-80 -translate-y-full h-14 transition-all ${
             menuIsOpen && "translate-y-0"
           }`}

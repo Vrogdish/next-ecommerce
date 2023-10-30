@@ -5,13 +5,13 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <div className=" border-t">
-      <div className="flex gap-10 justify-center items-center my-10">
-        <Image src={"SVG/Twitter.svg"} alt="" width={50} height={50} />
-        <Image src={"SVG/Instagram-dark.svg"} alt="" width={50} height={50} />
-        <Image src={"SVG/YouTube.svg"} alt="" width={50} height={50} />
+      <div className="flex gap-10 justify-center items-center mt-20 mb-10">
+        <Image src={"svg/Twitter.svg"} alt="twitter" width={50} height={50} />
+        <Image src={"svg/Instagram-dark.svg"} alt="instagram" width={50} height={50} />
+        <Image src={"svg/YouTube.svg"} alt="youtube" width={50} height={50} />
       </div>
       <Image
-        src={"/SVG/separate.svg"}
+        src={"/svg/separate.svg"}
         alt=""
         width={300}
         height={4}

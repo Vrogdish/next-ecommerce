@@ -13,7 +13,7 @@ export default function Header() {
   const rightNav = [
     {
       title: "mon compte",
-      link: "",
+      link: "/account",
       imageUrl: "/icons/user.png",
     },
     {
@@ -24,7 +24,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="h-16  flex justify-between items-center px-8 relative z-10">
+    <header className="h-16  flex justify-between items-center px-8 relative z-10 bg-slate-200">
       <BurgerMenu />
       <Link href={"/"}>
         <Image

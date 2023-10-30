@@ -2,6 +2,7 @@ import { Product } from "@/models/product";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Typography from "@/design/typography/Typography";
 
 interface Props {
   product: Product;
@@ -14,7 +15,7 @@ export default function CardPopulars({ product, className }: Props) {
       <div className="w-full relative h-72">
         <Image
           src={product.image}
-          alt=""
+          alt={product.title}
           fill
           className="absolute object-cover object-top w-full top-0 "
         />
@@ -22,9 +23,12 @@ export default function CardPopulars({ product, className }: Props) {
           <p className="border rounded-full px-4 py-2 bg-white">Commander</p>
         </Link>
       </div>
-      <div className="flex flex-col justify-between h-20">
+      <div className="flex flex-col justify-between h-32">
         <p className="mt-4">{product.title}</p>
-        <p className="font-bold text-right ">{product.price} €</p>
+        <Typography variant="caption"
+          className="text-right mt-3 text-red-800">{product.price.toFixed(2)} €
+        </Typography>
+        
       </div>
     </div>
   );

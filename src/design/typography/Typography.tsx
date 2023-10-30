@@ -1,12 +1,13 @@
-import {  Playfair_Display } from "next/font/google";
+import {  Playfair_Display, Montserrat } from "next/font/google";
 import React, { ReactNode } from "react";
 
 const playfair = Playfair_Display({subsets: ["latin"]})
+const montserrat = Montserrat({subsets : ["latin"]})
 
 interface props {
   children: ReactNode;
   variant?: "p" | "h1" | "h2" | "h3" | "caption";
-  component?: "p" | "h1" | "h2" | "h3"|"div";
+  component?: "p" | "h1" | "h2" | "h3"|"div"|"span";
   color?: "light" | "dark" | "grey";
   className?: string;
 }
@@ -39,12 +40,13 @@ export default function Typography({
       break;
     case "h3":
       variantStyle = playfair.className;
-      variantSize = 'text-xl  md:text-2xl  lg:text-5xl'
+      variantSize = 'text-xl '
       variantWeight = "font-bold";
       break;
     case "caption":
-      variantStyle = playfair.className;
-      variantSize = " text-4xl md:text-5xl lg:text-7xl tracking-[0.25em] "
+      variantStyle = montserrat.className;
+      variantWeight = "font-bold";
+
   }
 
   switch (color) {

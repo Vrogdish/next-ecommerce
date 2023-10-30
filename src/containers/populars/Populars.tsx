@@ -4,11 +4,15 @@ import React, { useEffect } from "react";
 import Typography from "@/design/typography/Typography";
 import { useProductStore } from "@/store/products";
 import CardPopulars from "@/components/card-populars/CardPopulars";
+import { useInView } from "react-intersection-observer";
 
 
 export default function Populars() {
   const getAllProducts = useProductStore((state) => state.getAllProducts);
   const productsList = useProductStore((state) => state.products);
+  const { ref, inView} = useInView({
+    threshold: 0.2,
+  });
 
   useEffect(() => {
     getAllProducts();
@@ -21,10 +25,8 @@ export default function Populars() {
         item.category === "men's clothing")
   );
 
-  console.log(popularsList);
-
   return (
-    <div>
+    <div ref={ref} className={`transition-all duration-700 ${inView ? "opacity-100" : "opacity-0"}`}>
       <Typography
         variant="h2"
         component="h2"
