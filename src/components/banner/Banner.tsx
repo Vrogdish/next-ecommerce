@@ -13,15 +13,15 @@ export default function Banner({ className, category }: Props) {
 
   switch (category) {
     case "women":
-      imageUrl = "/images/shopping.jpg";
+      imageUrl = "/images/shopping.webp";
       content = "For Women"
       break;
     case "men":
-      imageUrl = "/images/formen.jpg";
+      imageUrl = "/images/formen.webp";
       content = "For Men"
       break;
     case "accesories":
-      imageUrl = "/images/jewels.jpg";
+      imageUrl = "/images/jewels.webp";
       content = "For Style"
       break;
     case "all":

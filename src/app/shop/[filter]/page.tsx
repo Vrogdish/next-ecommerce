@@ -49,7 +49,7 @@ export default function Shop({
       </Typography>
       <Image
         src={"/svg/separate.svg"}
-        alt=""
+        alt="separate"
         width={300}
         height={4}
         className="m-auto"

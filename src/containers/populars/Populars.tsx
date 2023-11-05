@@ -26,7 +26,7 @@ export default function Populars() {
   );
 
   return (
-    <div ref={ref} className={`transition-all duration-700 ${inView ? "opacity-100" : "opacity-0"}`}>
+    <div ref={ref} className={`transition-all duration-700 ${inView ? "opacity-100" : "md:opacity-0"}`}>
       <Typography
         variant="h2"
         component="h2"
@@ -35,9 +35,9 @@ export default function Populars() {
         Les plus populaires
       </Typography>
 
-      <div className="flex gap-20 justify-center  my-20 ">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-32 justify-center px-10 my-20 ">
         {popularsList.map((item, index) => (
-          <CardPopulars product={item} key={index} className="w-60"/>
+          <CardPopulars product={item} key={index} className="md:w-50"/>
         ))}
       </div>
     </div>

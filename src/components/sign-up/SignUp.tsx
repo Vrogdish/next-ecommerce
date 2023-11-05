@@ -30,11 +30,11 @@ export default function SignUp() {
   return (
     <form
       action=""
-      className="flex flex-col justify-between h-96 px-10 mx-auto mt-20"
+      className="flex flex-col justify-between  md:px-10 mx-auto mt-20"
       onSubmit={handleSubmit(onSubmit)}
     >
       <div className="flex flex-col px-8 gap-4 ">
-        <div className="flex justify-between gap-10">
+        <div className="flex flex-col md:flex-row justify-between gap-10">
           <div className="flex flex-col w-full gap-2">
             <label htmlFor="lastname">Nom :</label>
             <input
@@ -55,7 +55,7 @@ export default function SignUp() {
           </div>
         </div>
 
-        <div className="flex justify-between gap-10">
+        <div className="flex flex-col md:flex-row justify-between gap-10">
           <div className="flex flex-col w-full gap-2">
             <label htmlFor="adress">Adresse :</label>
             <input
@@ -76,7 +76,7 @@ export default function SignUp() {
           </div>
         </div>
 
-        <div className="flex justify-between gap-10">
+        <div className="flex flex-col md:flex-row justify-between gap-10">
           <div className="flex flex-col w-full gap-2">
             <label htmlFor="register-email">Adresse email :</label>
             <input
@@ -99,7 +99,7 @@ export default function SignUp() {
             />
           </div>
         </div>
-        <div className="flex flex-col gap-2 w-1/2 ml-auto pl-6">
+        <div className="flex flex-col gap-2 md:w-1/2 md:ml-auto md:pl-6">
           <label htmlFor="confirm">Confirmer le mot de passe :</label>
           <input
             type="password"
@@ -110,7 +110,7 @@ export default function SignUp() {
           />
         </div>
       </div>
-      <Button className="mt-4 mx-20" action={() => null}>
+      <Button className="mt-10 mx-10 md:mx-20" action={() => null}>
         Créer mon compte
       </Button>
     </form>

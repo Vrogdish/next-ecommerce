@@ -7,9 +7,9 @@ import Payment from "@/components/payment/Payment";
 export default function MyCart() {
 
   return (
-    <main className="my-20 flex justify-between mx-20 gap-20">
-      <MyCartSection className="w-2/3" />
-      <div className="border w-1/3 p-10 rounded-xl">
+    <main className="my-20 flex flex-col lg:flex-row gap-20 md:mx-10">
+      <MyCartSection className="w-full" />
+      <div className="md:border md:w-[500px] md:p-10 rounded-xl mx-auto">
         <Payment/>
       </div>
     </main>

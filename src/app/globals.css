@@ -2,3 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+main {
+    max-width: 1920px;
+    margin: auto;
+}

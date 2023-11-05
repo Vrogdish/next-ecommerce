@@ -37,9 +37,9 @@ export default function BuyIt({ className, product }: Props) {
   }, [myCart, product.id]);
 
   return (
-    <div className={`flex justify-between items-center  ${className}`}>
+    <div className={`flex flex-col md:flex-row gap-10 justify-between items-center  ${className}`}>
       {!ItemInCart ? (
-        <div className="flex items-center gap-4">
+        <div className="flex  items-center gap-4">
           <div
             className={`cursor-pointer w-8 h-8 border rounded-full flex justify-center items-center transition-all ${
               size === "s" && "bg-black text-white"

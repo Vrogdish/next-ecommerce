@@ -23,7 +23,7 @@ export default function SignIn() {
     
 
   return (
-    <form className="flex flex-col justify-between h-96 w-96 mx-auto mt-20" onSubmit={handleSubmit(onSubmit)} >
+    <form className="flex flex-col justify-between md:w-96 mx-auto mt-20" onSubmit={handleSubmit(onSubmit)} >
     <div className="flex flex-col px-8 gap-4 ">
       <div className="flex flex-col w-full gap-2">
         <label htmlFor="email">Adresse email :</label>
@@ -35,7 +35,7 @@ export default function SignIn() {
       </div>
       <div className="text-gray-400 text-right cursor-pointer">mot de passe oublié ?</div>
     </div>
-    <Button action={()=>null} >
+    <Button action={()=>null} className="mt-20 w-72 mx-auto" >
       Me connecter
     </Button>
   </form>

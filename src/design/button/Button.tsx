@@ -17,7 +17,7 @@ export default function Button({
 
   switch (variant) {
     case "default":
-      variantStyle = " hover:bg-black hover:text-white";
+      variantStyle = " bg-black text-white hover:bg-white hover:text-black";
       break;
     case "alert":
       variantStyle = "";

@@ -6,6 +6,7 @@ import BurgerMenu from "../burger-menu/BurgerMenu";
 import Navbar from "../../components/navbar/Navbar";
 import Link from "next/link";
 import { useCartStore } from "@/store/cart";
+import BurgerMenuMobile from "../burger-menu-mobile/BurgerMenuMobile";
 
 export default function Header() {
   const myCart = useCartStore((state) => state.myCart);
@@ -23,19 +24,30 @@ export default function Header() {
     },
   ];
 
+  const rightNavMobile = [
+    {
+      title: "mon panier",
+      link: "/cart",
+      imageUrl: "/icons/bag.png",
+    },
+  ]
+
   return (
     <header className="h-16  flex justify-between items-center px-8 relative z-10 bg-slate-200">
-      <BurgerMenu />
+      <BurgerMenu className="hidden md:block"/>
+      <BurgerMenuMobile className="md:hidden"/>
       <Link href={"/"}>
         <Image
-          src={"/SVG/Logo.svg"}
+          src={"/svg/Logo.svg"}
           alt="Open Fashion"
           width={100}
           height={100}
+          className="w-16 h-16 md:w-28 md:h-28"
         />
       </Link>
       <div className="relative">
-        <Navbar navList={rightNav} />
+        <Navbar navList={rightNav} className="hidden md:flex"/>
+        <Navbar navList={rightNavMobile} className="flex md:hidden"/>
         {myCart.length !== 0 && <div className="absolute top-5 right-0 h-2 w-2 rounded-full bg-red-600"></div>}
       </div>
     </header>

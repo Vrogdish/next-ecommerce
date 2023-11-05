@@ -34,7 +34,7 @@ export default function Payment() {
         <Typography variant='h3' component='h2' className='text-center mt-6'>
             Choississez votre moyen de paiement :
         </Typography>
-        <div className='flex gap-6 justify-between mx-6 my-20'>
+        <div className='flex flex-col md:flex-row items-center gap-6 justify-between mx-6 my-20'>
           <div className={` ${cardStyle} ${paymentType === "creditCard" ? "border-black" : "border-gray-200"}`} onClick={()=>toggleType("creditCard")}>
             <p>Carte de crédit</p>
             <Image src={"/icons/creditcard.png"} alt='carte de crédit' width={60} height={60} className=''/>
@@ -46,7 +46,7 @@ export default function Payment() {
           </div>
         </div>
 
-        <Button action={()=>handlePay()} variant={`${paymentType === "none" || total === 0 ? "disable" : "default"}`} className='w-96 mx-auto mt-20'>
+        <Button action={()=>handlePay()} variant={`${paymentType === "none" || total === 0 ? "disable" : "default"}`} className='w-full mx-auto mt-20'>
           Payer ({total.toFixed(2)}€)
         </Button>
     </div>

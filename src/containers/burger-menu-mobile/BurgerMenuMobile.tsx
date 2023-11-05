@@ -1,9 +1,7 @@
-"use client";
-
-import React, { useState } from "react";
-import "./style.css";
 import Navbar from "@/components/navbar/Navbar";
 import { Navlink } from "@/models/navlink";
+import React, { useState } from "react";
+import "./style.css";
 
 const burgerNavList: Navlink[] = [
   {
@@ -29,10 +27,10 @@ const burgerNavList: Navlink[] = [
 ];
 
 interface Props {
-  className? : string
+  className?: string;
 }
 
-export default function BurgerMenu({className}:Props) {
+export default function BurgerMenuMobile({ className }: Props) {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -40,21 +38,20 @@ export default function BurgerMenu({className}:Props) {
   };
 
   return (
-    <div className={className}>
+    <div className={` ${className}`}>
       <div
         className={`burger-nav ${menuIsOpen ? "burger-close" : null}`}
         onClick={() => toggleMenu()}
       >
         <div className="burger-bar"></div>
       </div>
-      <div className="absolute top-16 left-0  h-14 w-full overflow-hidden">
-        <Navbar
-          navList={burgerNavList}
-          className={`bg-slate-300 bg-opacity-80 -translate-y-full h-14 transition-all  ${
-            menuIsOpen && "translate-y-0"
-          }`}
-        />
-      </div>
+      <Navbar
+        navList={burgerNavList}
+        direction="col"
+        className={`bg-slate-200  -translate-x-full  transition-all absolute p-10 left-0  ${
+          menuIsOpen && "translate-x-0"
+        }`}
+      />
     </div>
   );
 }
