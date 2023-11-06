@@ -1,12 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images : {
+  images: {
     remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: 'fakestoreapi.com',
-        },
-      ],}
-}
+      {
+        protocol: "https",
+        hostname: "fakestoreapi.com",
+      },
+    ],
+    dangerouslyAllowSVG : true
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
