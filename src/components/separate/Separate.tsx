@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import separate from "@/assets/svg/separate.svg"
 
 interface Props {
   className?: string;
@@ -9,11 +10,9 @@ export default function Separate({ className }: Props) {
   return (
     <div>
       <Image
-        src={"/svg/separate.svg"}
+        src={separate}
         alt="separate"
-        width={300}
-        height={20}
-        className={`m-auto h-5 ${className}`}
+        className={`m-auto w-60 h-5 ${className}`}
       />
     </div>
   );
