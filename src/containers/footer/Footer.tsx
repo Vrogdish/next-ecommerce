@@ -2,19 +2,17 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Separate from "@/components/separate/Separate";
+import instagramDark from "@/assets/svg/Instagram-dark.svg";
+import twitter from "@/assets/svg/Twitter.svg";
+import youtube from "@/assets/svg/YouTube.svg";
 
 export default function Footer() {
   return (
     <div className=" border-t">
       <div className="flex gap-10 justify-center items-center mt-20 mb-10">
-        <Image src={"/svg/Twitter.svg"} alt="twitter" width={50} height={50} />
-        <Image
-          src={"/svg/Instagram-dark.svg"}
-          alt="instagram"
-          width={50}
-          height={50}
-        />
-        <Image src={"/svg/YouTube.svg"} alt="youtube" width={50} height={50} />
+        <Image src={twitter} alt="twitter" className="h-12 w-12" />
+        <Image src={instagramDark} alt="instagram" className="h-12 w-12"/>
+        <Image src={youtube} alt="youtube" className="h-12 w-12" />
       </div>
       <Separate />
       <div className="flex flex-col items-center md:flex-row gap-10 justify-center my-20">

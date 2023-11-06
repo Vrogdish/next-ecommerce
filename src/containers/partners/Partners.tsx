@@ -4,25 +4,37 @@ import React from "react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import Separate from "@/components/separate/Separate";
+import prada from "@/assets/svg/Prada.svg"
+import burberry from "@/assets/svg/Burberry.svg"
+import boss from "@/assets/svg/Boss.svg"
+import cartier from "@/assets/svg/Cartier.svg"
+import gucci from "@/assets/svg/Gucci.svg"
+import tiffany from "@/assets/svg/Tiffany.svg"
 
 const partnersList = [
   {
-    imageUrl: "/svg/Prada.svg",
+    imageUrl: prada,
+    title : "Prada"
   },
   {
-    imageUrl: "/svg/Burberry.svg",
+    imageUrl: burberry,
+    title : "Burberry"
   },
   {
-    imageUrl: "/svg/Boss.svg",
+    imageUrl: boss,
+    title : "Boss"
   },
   {
-    imageUrl: "/svg/Cartier.svg",
+    imageUrl: cartier,
+    title : "Cartier"
   },
   {
-    imageUrl: "/svg/Gucci.svg",
+    imageUrl: gucci,
+    title : "Gucci"
   },
   {
-    imageUrl: "/svg/Tiffany.svg",
+    imageUrl: tiffany,
+    title:"Tiffany"
   },
 ];
 
@@ -45,9 +57,7 @@ export default function Partners() {
           <Image
             key={index}
             src={item.imageUrl}
-            alt=""
-            width={100}
-            height={50}
+            alt={item.title}
             className="mx-auto h-16 w-32"
           />
         ))}

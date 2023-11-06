@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Typography from "@/design/typography/Typography";
 import { useInView } from "react-intersection-observer";
+import instagram from "@/assets/svg/Instagram.svg"
 
 const staff = [
   {
@@ -44,10 +45,8 @@ export default function About() {
         Nous suivre
       </Typography>
       <Image
-        src={"/svg/instagram.svg"}
+        src={instagram}
         alt="instagram"
-        width={50}
-        height={50}
         className="mx-auto mb-20 h-14 w-14"
       />
       <div className="grid md:grid-cols-2 max-w-screen-lg mx-auto gap-8">
