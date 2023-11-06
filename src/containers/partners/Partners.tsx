@@ -3,33 +3,25 @@
 import React from "react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
-import separate from "@/assets/svg/separate.svg"
-import prada from "@/assets/svg/Prada.svg"
-import burberry from "@/assets/svg/Burberry.svg"
-import boss from "@/assets/svg/Boss.svg"
-import cartier from "@/assets/svg/Cartier.svg"
-import gucci from "@/assets/svg/Gucci.svg"
-import tiffany from "@/assets/svg/Tiffany.svg"
-
 
 const partnersList = [
   {
-    imageUrl: prada.src,
+    imageUrl:"/svg/Prada.svg",
   },
   {
-    imageUrl: burberry.src,
+    imageUrl: "/svg/Burberry.svg",
   },
   {
-    imageUrl: boss.src,
+    imageUrl: "/svg/Boss.svg",
   },
   {
-    imageUrl: cartier.src,
+    imageUrl: "/svg/Cartier.svg",
   },
   {
-    imageUrl: gucci.src,
+    imageUrl: "/svg/Gucci.svg",
   },
   {
-    imageUrl: tiffany.src,
+    imageUrl: "svg/Tiffany.svg",
   },
 ];
 
@@ -41,7 +33,7 @@ export default function Partners() {
   return (
     <div ref={ref} className={`transition-all duration-700 ${inView ? "opacity-100" : "opacity-0"}`}>
       <Image
-        src={separate.src}
+        src={"/svg/separate.svg"}
         alt=""
         width={300}
         height={20}
@@ -62,7 +54,7 @@ export default function Partners() {
       </div>
 
       <Image
-        src={separate.src}
+        src={"/svg/separate.svg"}
         alt=""
         width={300}
         height={20}

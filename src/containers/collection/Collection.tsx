@@ -4,7 +4,6 @@ import Typography from "@/design/typography/Typography";
 import React from "react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
-import separate from "@/assets/svg/separate.svg"
 
 const collection = [
   {
@@ -45,7 +44,7 @@ export default function Collection() {
         Nouvelles collections
       </Typography>
       <Image
-        src={separate.src}
+        src={"/svg/separate.svg"}
         alt="separate"
         width={300}
         height={20}
