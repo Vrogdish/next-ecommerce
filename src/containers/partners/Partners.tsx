@@ -22,7 +22,7 @@ const partnersList = [
     imageUrl: "/svg/Gucci.svg",
   },
   {
-    imageUrl: "svg/Tiffany.svg",
+    imageUrl: "/svg/Tiffany.svg",
   },
 ];
 

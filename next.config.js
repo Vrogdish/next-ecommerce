@@ -7,7 +7,10 @@ const nextConfig = {
         hostname: "fakestoreapi.com",
       },
     ],
-    dangerouslyAllowSVG : true
+    dangerouslyAllowSVG : true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+
   },
 };
 
