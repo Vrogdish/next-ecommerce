@@ -7,6 +7,7 @@ import Navbar from "../../components/navbar/Navbar";
 import Link from "next/link";
 import { useCartStore } from "@/store/cart";
 import BurgerMenuMobile from "../burger-menu-mobile/BurgerMenuMobile";
+import logo from "@/assets/svg/Logo.svg"
 
 export default function Header() {
   const myCart = useCartStore((state) => state.myCart);
@@ -38,10 +39,8 @@ export default function Header() {
       <BurgerMenuMobile className="md:hidden"/>
       <Link href={"/"}>
         <Image
-          src={"/svg/Logo.svg"}
+          src={logo}
           alt="Open Fashion"
-          width={100}
-          height={100}
           className="w-16 h-16 md:w-28 md:h-28"
         />
       </Link>
