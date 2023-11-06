@@ -1,12 +1,13 @@
-"use client"
+"use client";
 
 import React from "react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import Separate from "@/components/separate/Separate";
 
 const partnersList = [
   {
-    imageUrl:"/svg/Prada.svg",
+    imageUrl: "/svg/Prada.svg",
   },
   {
     imageUrl: "/svg/Burberry.svg",
@@ -26,19 +27,18 @@ const partnersList = [
 ];
 
 export default function Partners() {
-  const { ref, inView} = useInView({
+  const { ref, inView } = useInView({
     threshold: 0.2,
   });
 
   return (
-    <div ref={ref} className={`transition-all duration-700 ${inView ? "opacity-100" : "opacity-0"}`}>
-      <Image
-        src={"/svg/separate.svg"}
-        alt=""
-        width={300}
-        height={20}
-        className="m-auto h-5"
-      />
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ${
+        inView ? "opacity-100" : "opacity-0"
+      }`}
+    >
+      <Separate />
 
       <div className="grid grid-cols-3 gap-10 px-6 md:gap-16 md:w-1/2 mx-auto my-20 ">
         {partnersList.map((item, index) => (
@@ -53,13 +53,7 @@ export default function Partners() {
         ))}
       </div>
 
-      <Image
-        src={"/svg/separate.svg"}
-        alt=""
-        width={300}
-        height={20}
-        className="m-auto h-5"
-      />
+      <Separate />
     </div>
   );
 }

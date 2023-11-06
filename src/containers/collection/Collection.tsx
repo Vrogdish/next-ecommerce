@@ -4,6 +4,7 @@ import Typography from "@/design/typography/Typography";
 import React from "react";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
+import Separate from "@/components/separate/Separate";
 
 const collection = [
   {
@@ -43,13 +44,8 @@ export default function Collection() {
       <Typography variant="h2" className="text-center pt-20 pb-4">
         Nouvelles collections
       </Typography>
-      <Image
-        src={"/svg/separate.svg"}
-        alt="separate"
-        width={300}
-        height={20}
-        className="m-auto h-5"
-      />
+
+      <Separate/>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto my-10">
         {collection.map((item, index) => (
