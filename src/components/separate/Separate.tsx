@@ -8,13 +8,13 @@ interface Props {
 export default function Separate({ className }: Props) {
   return (
     <div>
-      {/* <Image
+      <Image
         src={"/svg/separate.svg"}
         alt="separate"
         width={300}
         height={20}
         className={`m-auto h-5 ${className}`}
-      /> */}
+      />
     </div>
   );
 }

@@ -6,7 +6,7 @@ import Separate from "@/components/separate/Separate";
 export default function Footer() {
   return (
     <div className=" border-t">
-      <div className="flex gap-10 justify-center items-center mt-20 mb-10">
+      {/* <div className="flex gap-10 justify-center items-center mt-20 mb-10">
         <Image src={"/svg/Twitter.svg"} alt="twitter" width={50} height={50} />
         <Image
           src={"/svg/Instagram-dark.svg"}
@@ -15,7 +15,7 @@ export default function Footer() {
           height={50}
         />
         <Image src={"/svg/YouTube.svg"} alt="youtube" width={50} height={50} />
-      </div>
+      </div> */}
       <Separate />
       <div className="flex flex-col items-center md:flex-row gap-10 justify-center my-20">
         <Link href={""}>Conditions générales de vente</Link>
