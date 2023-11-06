@@ -37,7 +37,7 @@ export default function Product({ params }: { params: { id: number } }) {
           <p>Retour à la boutique</p>
         </div>
         <div className=" mx-auto max-w-screen-lg">
-          <div className="flex flex-col lg:flex-row gap-28 items-center lg:items-end  mb-20 ">
+          <div className="flex flex-col lg:flex-row gap-28 items-center lg:items-end  mb-20 px-6 ">
             <div>
               <Image src={product?.image} alt="" width={400} height={400} />
             </div>

@@ -2,7 +2,6 @@
 
 import { useProductStore } from "@/store/products";
 import React, { useEffect } from "react";
-import Image from "next/image";
 import Typography from "@/design/typography/Typography";
 import CardPopulars from "@/components/card-populars/CardPopulars";
 import Banner from "@/components/banner/Banner";
@@ -52,7 +51,7 @@ export default function Shop({
         Nos Produits
       </Typography>
       <Separate />
-      <div className="grid grid-cols-4 gap-20 max-w-screen-xl mx-auto px-10 my-20">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20 max-w-screen-xl mx-auto px-10 my-20">
         {filteredProduct.map((item, index) => (
           <CardPopulars key={index} product={item} className="h-96" />
         ))}

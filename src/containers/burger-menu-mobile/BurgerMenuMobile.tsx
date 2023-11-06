@@ -46,11 +46,13 @@ export default function BurgerMenuMobile({ className }: Props) {
         <div className="burger-bar"></div>
       </div>
       <Navbar
+      closeMenu={toggleMenu}
         navList={burgerNavList}
         direction="col"
-        className={`bg-slate-200  -translate-x-full  transition-all absolute p-10 left-0  ${
+        className={`bg-slate-200  -translate-x-full  transition-all absolute p-10 left-0 mt-4  ${
           menuIsOpen && "translate-x-0"
         }`}
+        
       />
     </div>
   );

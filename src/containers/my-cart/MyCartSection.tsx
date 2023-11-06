@@ -22,10 +22,10 @@ export default function MyCartSection({ className }: Props) {
   return (
     <div className={`${className} px-6`}>
       <div>
-        <Typography variant="h2" component="h1" className=" px-10">
+        <Typography variant="h2" component="h1" className=" md:px-10">
           Mon Panier
         </Typography>
-        <p className="px-10 mb-10">{myCart.length} article(s)</p>
+        <p className="md:px-10 mb-10">{myCart.length} article(s)</p>
       </div>
       <div className="w-full xl:pl-32 border-b pb-20">
         {myCart.map((item, index) => (
@@ -75,9 +75,9 @@ export default function MyCartSection({ className }: Props) {
           </>
         )}
       </div>
-      <p className="font-bold text-right lg:px-28 mt-6">
-        Prix total : {total.toFixed(2)} €
-      </p>
+      <Typography variant="caption" component="p" color="red" className="text-right mt-4">
+      Prix total : {total.toFixed(2)} €
+      </Typography>
     </div>
   );
 }

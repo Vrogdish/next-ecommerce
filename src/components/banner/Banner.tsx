@@ -42,7 +42,7 @@ export default function Banner({ className, category }: Props) {
       <Typography
         variant="h1"
         component="h2"
-        className="absolute top-1/4 left-40"
+        className="absolute w-full top-1/4 md:pr-60 text-center"
         color="light"
       >
        {content}

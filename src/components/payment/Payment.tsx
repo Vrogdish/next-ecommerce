@@ -27,12 +27,12 @@ export default function Payment() {
   console.log(paymentType);
  }
 
- const cardStyle = "w-60 h-40 border-4 rounded-lg  transition-all cursor-pointer flex flex-col items-center justify-center gap-6"
+ const cardStyle = "w-full md:w-60 h-40 border-4 rounded-lg  transition-all cursor-pointer flex flex-col items-center justify-center gap-6"
 
   return (
     <div>
-        <Typography variant='h3' component='h2' className='text-center mt-6'>
-            Choississez votre moyen de paiement :
+        <Typography variant='h3' component='h2' className='text-center px-4 mt-6'>
+            Choississez votre moyen de paiement:
         </Typography>
         <div className='flex flex-col md:flex-row items-center gap-6 justify-between mx-6 my-20'>
           <div className={` ${cardStyle} ${paymentType === "creditCard" ? "border-black" : "border-gray-200"}`} onClick={()=>toggleType("creditCard")}>
@@ -46,7 +46,7 @@ export default function Payment() {
           </div>
         </div>
 
-        <Button action={()=>handlePay()} variant={`${paymentType === "none" || total === 0 ? "disable" : "default"}`} className='w-full mx-auto mt-20'>
+        <Button action={()=>handlePay()} variant={`${paymentType === "none" || total === 0 ? "disable" : "default"}`} className=' mx-10 mt-20 '>
           Payer ({total.toFixed(2)}€)
         </Button>
     </div>
