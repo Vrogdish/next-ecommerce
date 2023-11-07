@@ -24,6 +24,7 @@ export default function BuyIt({ className, product }: Props) {
       quantity: 1,
     };
     addItemToCart(cartItem);
+    // localStorage.setItem("cart",JSON.stringify(myCart))
   };
 
   const handleDelete = () => {

@@ -15,6 +15,8 @@ export default function Shop({
   const filter = params.filter;
   const getAllProducts = useProductStore((state) => state.getAllProducts);
   const products = useProductStore((state) => state.products);
+  const isLoading = useProductStore((state)=> state.isLoading)
+  const errorProduct = useProductStore((state)=>state.error)
 
   useEffect(() => {
     getAllProducts();
@@ -52,10 +54,11 @@ export default function Shop({
       </Typography>
       <Separate />
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20 max-w-screen-xl mx-auto px-10 my-20">
-        {filteredProduct.map((item, index) => (
+        {isLoading === false ? filteredProduct.map((item, index) => (
           <CardPopulars key={index} product={item} className="h-96" />
-        ))}
+        )) : <p>Chargement en cours ...</p>}
       </div>
+      {errorProduct && <p>Erreur de chargement</p>}
     </main>
   );
 }

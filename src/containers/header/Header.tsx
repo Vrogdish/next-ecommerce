@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import BurgerMenu from "../burger-menu/BurgerMenu";
 import Navbar from "../../components/navbar/Navbar";
@@ -11,6 +11,13 @@ import logo from "@/assets/svg/Logo.svg"
 
 export default function Header() {
   const myCart = useCartStore((state) => state.myCart);
+  const initCart = useCartStore((state) => state.initCart)
+
+
+  useEffect(()=>{
+    initCart()
+  },[initCart])
+  
 
   const rightNav = [
     {

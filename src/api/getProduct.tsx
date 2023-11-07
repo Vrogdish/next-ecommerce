@@ -1,6 +1,7 @@
 import { Product } from "@/models/product";
 
 export const getProductsFromApi = async () => {
+  let fetchResponse : {data : Product[], error : any} = {data : [] , error : ""}
   try {
     const res = await fetch("https://fakestoreapi.com/products");
     const productsJson = await res.json();
@@ -21,10 +22,15 @@ export const getProductsFromApi = async () => {
         },
       };
       productsList.push(product);
+      
     });
- 
-    return productsList;
+    fetchResponse.data = productsList 
+    // return productsList;
+    return fetchResponse
+
   } catch (error) {
+    fetchResponse.error = error
     console.log(error);
+    return fetchResponse
   }
 };
