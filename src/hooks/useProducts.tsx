@@ -1,19 +1,20 @@
-// "use client"
-// import { useProductStore } from '@/store/products'
-// import React, { useEffect, useState } from 'react'
+"use client"
+import { useProductStore } from '@/store/products'
+import React, { useEffect } from 'react'
 
-// export default function useProducts() {
-//     const [products, setProducts] = useState()
-//     const [isLoading, setIsLoading] = useState()
-//     const [error, setError] = useState()
+export default function useProducts() {
+ 
+    const getAllProducts = useProductStore((state)=>state.getAllProducts)
+    const products = useProductStore((state)=>state.products)
+    const isLoading = useProductStore((state)=>state.isLoading)
+    const productError = useProductStore((state)=>state.error)
 
-//     const productStore = useProductStore((state)=>state.getAllProducts)
 
-// useEffect(()=>{
+useEffect(()=>{
+    getAllProducts()
+},[getAllProducts])
 
-// },[])
-
-//   return (
-//     <div>useProducts</div>
-//   )
-// }
+  return (
+    {products, productError, isLoading}
+  )
+}

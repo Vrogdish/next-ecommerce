@@ -6,7 +6,6 @@ import Image from "next/image";
 import BuyIt from "@/components/buy-it/BuyIt";
 import { useRouter } from "next/navigation";
 import Typography from "@/design/typography/Typography";
-import Separate from "@/components/separate/Separate";
 
 export default function Product({ params }: { params: { id: number } }) {
   const getAllProducts = useProductStore((state) => state.getAllProducts);
